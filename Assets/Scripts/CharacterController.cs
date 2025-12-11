@@ -21,11 +21,6 @@ public class CharacterController : MonoBehaviour
 
     public float animTime = 0.5f;
 
-    private void Start()
-    {
-        StartCoroutine(InitializeCharacterSpeech());
-    }
-
     void Update()
     {
         // If the audio source is NOT playing any audio
@@ -57,10 +52,8 @@ public class CharacterController : MonoBehaviour
         character.SetBlendShapeWeight(16, weight);
     }
 
-    private IEnumerator InitializeCharacterSpeech()
+    public void PlayScript()
     {
-        yield return new WaitForSeconds(1f);
-
         audioSource.Play();
     }
 
